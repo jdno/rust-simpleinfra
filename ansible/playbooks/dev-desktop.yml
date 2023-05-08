@@ -18,3 +18,7 @@
       vars:
         datadog_api_key: "{{ vars_datadog_api_key }}"
         datadog_site: "datadoghq.com"
+
+        datadog_config:
+          process_config:
+            enabled: "true"
