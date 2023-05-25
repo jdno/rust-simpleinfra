@@ -166,13 +166,13 @@ data "aws_s3_bucket" "logs" {
   bucket   = each.value
 }
 
-resource "aws_s3_bucket_notification" "logs_to_datadog" {
-  for_each = data.aws_s3_bucket.logs
-
-  bucket = each.value.bucket
-
-  lambda_function {
-    lambda_function_arn = data.aws_lambda_function.datadog_forwarder.arn
-    events              = ["s3:ObjectCreated:*"]
-  }
-}
+#resource "aws_s3_bucket_notification" "logs_to_datadog" {
+#  for_each = data.aws_s3_bucket.logs
+#
+#  bucket = each.value.bucket
+#
+#  lambda_function {
+#    lambda_function_arn = data.aws_lambda_function.datadog_forwarder.arn
+#    events              = ["s3:ObjectCreated:*"]
+#  }
+#}
